@@ -8,18 +8,22 @@
   // find the button element on the page by its ID with JavaScript
   let theButton = document.querySelector("#myButton"),
       theHeading = document.querySelector('h1'),
-      svgImage = document.querySelector("#svgGraphic");
+      //svgImage = document.querySelector("#svgGraphic"),
+      allSVGs = document.querySelectorAll(".svg");
 
   // this function changes the heading text
   function changeText() {
     theHeading.textContent = "Hello there from console";
   }
 
-  function logSVG() {
+  function logoSVG() {
     console.log(this.id);
   }
 
   // this creates an event when the button is clicked - changing text
   theButton.addEventListener("click", changeText);
-  svgImage.addEventListener("mouseover", logSVG);
+  //svgImage.addEventListener("click", logoSVG);
+  //svgImage2.addEventListener("click", logoSVG);
+
+  allSVGs.forEach(item => item.addEventListener('click', logoSVG));
 })();
